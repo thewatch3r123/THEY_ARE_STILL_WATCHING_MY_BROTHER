@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>peaceful_cave.com // COLD_STREAM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Los ojos que te miran -->
+    <div class="background-eyes">
+        <div class="eye"><div class="pupil"></div></div>
+        <div class="eye"><div class="pupil"></div></div>
+        <div class="eye"><div class="pupil"></div></div>
+        <div class="eye"><div class="pupil"></div></div>
+        <div class="eye"><div class="pupil"></div></div>
+    </div>
+
+    <!-- Manchas de sombras y vacío de fondo -->
+    <div class="blood-splatter visual-1"></div>
+    <div class="blood-splatter visual-2"></div>
+
+    <div class="terminal-container">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('index')">ø_1</button>
+            <button class="tab-btn" onclick="openTab('todo')">ø_2</button>
+            <button class="tab-btn" onclick="openTab('logs')">ø_3</button>
+        </div>
+
+        <div id="index" class="tab-content active-content">
+            <pre>
+<span class="noise">☠☠☠ ☠☠☠ ☠☠☠ ☠☠☠</span>
+<span class="noise">✝ ✝ ✝ ✝ ✝ ✝ ✝ ✝</span>
+
+    <span class="maldito rotado-a">A = 45 × 3</span>
+
+<span class="noise">☣☣☣ ☣☣☣ ☣☣☣ ☣☣☣</span>
+            </pre>
+        </div>
+
+        <div id="todo" class="tab-content">
+            <pre>
+<span class="noise">🕃 🕄 🕃 🕄 🕃 🕄 🕃 🕄</span>
+<span class="highlight-order">A B C D</span>
+
+    <span class="maldito rotado-b">B = 13 × 8</span>
+
+<span class="noise">🎚 🎚 🎚 🎚 🎚 🎚 🎚 🎚</span>
+            </pre>
+        </div>
+
+        <div id="logs" class="tab-content">
+            <pre>
+<span class="noise">⚰ ⚰ ⚰ ⚰ ⚰ ⚰ ⚰ ⚰</span>
+
+    <span class="maldito rotado-c">C = 2⁶</span>
+
+    <span class="maldito rotado-d">D = √2209</span>
+
+<span class="noise">🕷 🕷 🕷 🕷 🕷 🕷 🕷 🕷</span>
+            </pre>
+        </div>
+
+        <div class="validator-zone">
+            <p class="prompt">? [ _ _ _ _ _ _ _ _ _ _ ]</p>
+            <div class="input-area">
+                <input type="text" id="access-code" maxlength="10" placeholder=".........." autocomplete="off">
+                <button onclick="checkCode()">⚿</button>
+            </div>
+            <p id="error-msg" class="error-text"></p>
+        </div>
+    </div>
+
+    <div id="glitch-screen" class="glitch-overlay">
+        <div class="glitch-text">1351046447<br>👁 👁 👁</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
