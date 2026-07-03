@@ -1,0 +1,234 @@
+body {
+    background-color: #000000;
+    color: #ff0000; /* Cambiado a rojo puro para dar tensión */
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Ojos acechantes */
+.background-eyes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.eye {
+    position: absolute;
+    width: 65px;
+    height: 40px;
+    background-color: #ebdcd3;
+    border-radius: 50% / 50%;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.15;
+    transition: opacity 0.3s;
+}
+
+.eye::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: inset 0 0 12px #000;
+}
+
+.pupil {
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 50%;
+    position: relative;
+    border: 3px solid #990000;
+}
+
+/* Se añaden más ojos distribuidos de forma asimétrica en la oscuridad */
+.eye:nth-child(1) { top: 10%; left: 15%; transform: rotate(8deg); }
+.eye:nth-child(2) { top: 80%; left: 75%; transform: rotate(-12deg); }
+.eye:nth-child(3) { top: 50%; left: 85%; transform: rotate(20deg); }
+.eye:nth-child(4) { top: 75%; left: 10%; transform: rotate(-5deg); }
+.eye:nth-child(5) { top: 20%; left: 70%; transform: rotate(15deg); }
+
+body:hover .eye {
+    opacity: 0.5; /* Los ojos se clavan fijamente en el jugador al mover el mouse */
+}
+
+/* Sombras y gradientes oscuros */
+.blood-splatter {
+    position: absolute;
+    background: radial-gradient(circle, rgba(139,0,0,0.2) 0%, rgba(0,0,0,0) 70%);
+    pointer-events: none;
+    z-index: 2;
+}
+.visual-1 { width: 300px; height: 300px; top: -50px; left: -50px; }
+.visual-2 { width: 400px; height: 400px; bottom: -100px; right: -50px; }
+
+/* Contenedor central afilado */
+.terminal-container {
+    background-color: rgba(5, 5, 5, 0.95);
+    border: 1px solid #330000;
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.1);
+    width: 100%;
+    max-width: 550px;
+    z-index: 100;
+    position: relative;
+    border-radius: 0px;
+}
+
+.tabs {
+    display: flex;
+    background-color: #080000;
+    border-bottom: 1px solid #330000;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    color: #441111;
+    padding: 12px 25px;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    border-right: 1px solid #330000;
+}
+
+.tab-btn.active {
+    color: #ff0000;
+    background-color: rgba(5, 5, 5, 0.95);
+    text-shadow: 0 0 5px #ff0000;
+}
+
+.tab-content {
+    display: none;
+    padding: 30px;
+    min-height: 200px;
+    text-align: center;
+}
+
+.active-content {
+    display: block;
+}
+
+pre {
+    margin: 0;
+    white-space: pre-wrap;
+    line-height: 2;
+}
+
+.noise { color: #220505; font-size: 14px; letter-spacing: 5px; }
+.highlight-order { color: #ff0000; font-weight: bold; letter-spacing: 8px; font-size: 18px; display: block; margin: 15px 0; }
+
+/* Fórmulas desordenadas, iluminadas y alteradas */
+.maldito {
+    display: inline-block;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgba(139, 0, 0, 0.3);
+    padding: 5px 15px;
+    border: 1px solid #8b0000;
+    text-shadow: 0 0 8px #ff0000;
+}
+
+.rotado-a { transform: rotate(-8deg) scale(1.1); margin: 20px 0; }
+.rotado-b { transform: rotate(14deg) scale(0.95); margin: 20px 0; }
+.rotado-c { transform: rotate(-25deg); margin: 15px 0; }
+.rotado-d { transform: rotate(6deg) scale(1.2); margin: 25px 0; }
+
+/* Validador minimalista sin textos auxiliares */
+.validator-zone {
+    border-top: 1px solid #330000;
+    padding: 25px;
+    background-color: #030000;
+}
+
+.prompt { margin: 0 0 15px 0; color: #551111; font-size: 14px; letter-spacing: 3px; text-align: center; }
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+input {
+    background-color: #000;
+    border: 1px solid #551111;
+    color: #ff0000;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 18px;
+    letter-spacing: 5px;
+    flex-grow: 1;
+    outline: none;
+    text-align: center;
+}
+
+input:focus {
+    border-color: #ff0000;
+    box-shadow: 0 0 10px rgba(255,0,0,0.3);
+}
+
+button {
+    background-color: #1a0000;
+    border: 1px solid #551111;
+    color: #ff0000;
+    font-size: 18px;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background-color: #ff0000;
+    color: #000;
+    box-shadow: 0 0 10px #ff0000;
+}
+
+.error-text {
+    color: #ff0000;
+    margin: 15px 0 0 0;
+    font-size: 12px;
+    text-align: center;
+    height: 14px;
+}
+
+/* Pantalla de distorsión violenta final */
+.glitch-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 9999;
+    color: #ff0000;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 10px;
+    animation: intense-glitch 0.1s infinite;
+}
+
+@keyframes intense-glitch {
+    0% { background-color: #500000; transform: translate(3px, -2px); }
+    33% { background-color: #000000; transform: translate(-2px, 3px); }
+    66% { background-color: #1a0000; transform: translate(-3px, -3px); }
+    100% { background-color: #000000; transform: translate(2px, 2px); }
+}
